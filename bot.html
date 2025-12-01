@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UniBo FAQ Assistant</title>
+
+    <!-- Dialogflow Messenger -->
+    <link rel="stylesheet"
+          href="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/themes/df-messenger-default.css">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/df-messenger/prod/v1/df-messenger.js"></script>
+  </head>
+
+  <body style="margin:0; font-family: 'Inter', sans-serif; background:#f9f9f9;">
+
+    <h1 style="text-align:center; color:#8A1538; margin-top:40px;">
+      🎓 UniBo FAQ Assistant Demo
+    </h1>
+
+    <!-- виджет ассистента -->
+    <df-messenger
+      location="europe-west1"
+      project-id="graphite-pad-477416-d5"
+      agent-id="ca1da7a5-909c-41d6-9f8e-f06110d9418b"
+      language-code="en"
+      max-query-length="-1">
+      <df-messenger-chat-bubble
+        chat-title="UniBo FAQ Assistant"
+        chat-icon="logo.jpg">
+      </df-messenger-chat-bubble>
+    </df-messenger>
+
+    <!-- стилизация -->
+    <style>
+      df-messenger {
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        z-index: 999;
+
+        /* фон и шрифт */
+        --df-messenger-font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+        --df-messenger-chat-background: #ffffff;
+
+        /* верхняя панель */
+        --df-messenger-button-titlebar-color: #8A1538;
+        --df-messenger-button-titlebar-font-color: #ffffff;
+        --df-messenger-chat-header-background: #8A1538;
+        --df-messenger-chat-header-font-color: #ffffff;
+
+        /* пузырь логотипа */
+        --df-messenger-chat-icon-size: 32px;
+        --df-messenger-chat-icon-border-radius: 50%;
+
+        /* сообщения */
+        --df-messenger-message-user-background: #8A1538;
+        --df-messenger-message-user-font-color: #ffffff;
+        --df-messenger-message-bot-background: #f7f7f7;
+        --df-messenger-message-bot-font-color: #111827;
+
+        /* поле ввода */
+        --df-messenger-input-box-color: #ffffff;
+        --df-messenger-input-font-color: #1f2937;
+        --df-messenger-send-icon: #8A1538;
+
+        /* чипсы */
+        --df-messenger-chip-background: #F4E9EC;
+        --df-messenger-chip-font-color: #8A1538;
+        --df-messenger-chip-border-color: #8A1538;
+        --df-messenger-chip-border-radius: 9999px;
+      }
+
+      /* 👇 добавляем логотип в шапку */
+      df-messenger::part(header) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        background-color: #8A1538 !important;
+      }
+
+      df-messenger::part(title) {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 600;
+        font-size: 15px;
+        color: white;
+      }
+
+      df-messenger::part(title)::before {
+        content: "";
+        display: inline-block;
+        width: 28px;
+        height: 28px;
+        background-image: url('logo.jpg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 50%;
+      }
+    </style>
+  </body>
+</html>
+
